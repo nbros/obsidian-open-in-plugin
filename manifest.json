@@ -1,11 +1,10 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "open-in",
+	"name": "Open In",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
-	"isDesktopOnly": false
+	"description": "Adds commands to open the current vault root directory in Windows Explorer / Terminal.",
+	"author": "Nicolas Bros",
+	"authorUrl": "https://nbros.dev/",
+	"isDesktopOnly": true
 }
