@@ -1,4 +1,4 @@
-import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting, FileSystemAdapter } from 'obsidian';
+import { Notice, Plugin, FileSystemAdapter } from 'obsidian';
 import { exec } from "child_process"; // Import exec from Node.js
 
 export default class OpenInPlugin extends Plugin {
@@ -46,8 +46,8 @@ export default class OpenInPlugin extends Plugin {
 		// Execute the command
 		exec(command, (error, stdout, stderr) => {
 			if (error) {
-				console.error(`Failed to open Windows Terminal: (RC ${error.code}) ${error.message}`);
-				new Notice(`Failed to open Windows Terminal: (RC ${error.code}) ${error.message}`,);
+				console.error(`Command failed: (RC ${error.code}) ${error.message}`);
+				new Notice(`Command failed: (RC ${error.code}) ${error.message}`,);
 				return;
 			}
 			if (stderr) {
@@ -56,8 +56,6 @@ export default class OpenInPlugin extends Plugin {
 			if (stdout) {
 				console.debug(`stdout: ${stdout}`);
 			}
-
-			new Notice(`Opened in Windows Terminal.`);
 		});
 	}
 }
